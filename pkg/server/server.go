@@ -8,7 +8,7 @@ import (
 	"os/signal"
 
 	"attendance-management-backend/pkg/presentation/handler"
-	schema "attendance-management-backend/schema/gen/server"
+	schema "attendance-management-backend/pkg/schema/gen/server"
 
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/reflection"

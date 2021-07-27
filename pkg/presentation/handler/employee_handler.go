@@ -4,7 +4,7 @@ import (
 	"context"
 	"fmt"
 
-	schema "attendance-management-backend/schema/gen/server"
+	schema "attendance-management-backend/pkg/schema/gen/server"
 )
 
 type EmployeeHandler struct {}
