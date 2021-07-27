@@ -17,6 +17,8 @@ func (h *EmployeeHandler) List(
 	ctx context.Context,
 	req *schema.ListRequest,
 	) (*schema.ListResponse, error) {
+	fmt.Println(ctx)
+	fmt.Println(req)
 	fmt.Println("お試し")
 	return nil, nil
 }

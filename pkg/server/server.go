@@ -10,8 +10,8 @@ import (
 	"attendance-management-backend/pkg/presentation/handler"
 	schema "attendance-management-backend/schema/gen/server"
 
-	"google.golang.org/grpc/reflection"
 	"google.golang.org/grpc"
+	"google.golang.org/grpc/reflection"
 )
 
 func main() {
