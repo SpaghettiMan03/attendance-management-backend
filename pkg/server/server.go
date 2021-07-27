@@ -7,6 +7,7 @@ import (
 
 	"google.golang.org/grpc"
 	schema "github.com/SpaghettiMan03/attendance-management-backend/schema/gen/server"
+	"github.com/SpaghettiMan03/attendance-management-backend/pkg/presentation/handler"
 )
 
 func main() {
@@ -19,6 +20,11 @@ func main() {
 	fmt.Println(lis)
 
 	server := grpc.NewServer()
+
+	schema.RegisterEmployeeServiceServer(
+		server,
+		handler.NewEmployeeHandler(),
+		)
 
 	go func() {
 		log.Printf("start gRPC server port: %v", port)
