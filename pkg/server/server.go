@@ -5,9 +5,9 @@ import (
 	"log"
 	"net"
 
-	"google.golang.org/grpc"
-	schema "github.com/SpaghettiMan03/attendance-management-backend/schema/gen/server"
 	"github.com/SpaghettiMan03/attendance-management-backend/pkg/presentation/handler"
+	schema "github.com/SpaghettiMan03/attendance-management-backend/schema/gen/server"
+	"google.golang.org/grpc"
 )
 
 func main() {
