@@ -20,5 +20,24 @@ func (h *EmployeeHandler) List(
 	fmt.Println(ctx)
 	fmt.Println(req)
 	fmt.Println("お試し")
-	return nil, nil
+
+	employee := &schema.Employee{
+		FirstName: "名前",
+		LastName: "苗字",
+		Birthday: &schema.Date{
+			Day: 4,
+			Month: 12,
+			Year: 12,
+		},
+		Gender: schema.Employee_FEMALE,
+		Position: schema.Employee_PART_TIME,
+	}
+
+	employees := []*schema.Employee{ employee }
+
+	resp := &schema.ListResponse{
+		Employees: employees,
+	}
+
+	return resp, nil
 }
