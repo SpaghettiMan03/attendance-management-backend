@@ -3,7 +3,7 @@
 # スキーマのディレクトリ名
 schema_dir="pkg/schema"
 
-dir=$(PWD)
+dir=PWD
 
 # --initでローカルの設定ファイルを初期化、updateでデータの取得と親プロジェクトで指定されているコミットにチェックアウトする。
 git submodule update --init
