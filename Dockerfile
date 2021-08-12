@@ -9,6 +9,11 @@ COPY . .
 ARG CGO_ENABLED=0
 ARG GOOS=linux
 ARG GOARCH=amd64
+
+RUN go env
+RUN go env -w GO111MODULE=off
+RUN go env
+
 RUN go build -v -o /go/bin/app ./pkg/server/...
 
 # ==============================
