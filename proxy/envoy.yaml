@@ -38,6 +38,13 @@ static_resources:
                         max_age: "1728000"
                         expose_headers: custom-header-1,grpc-status,grpc-message
                 http_filters:
+                  - name: envoy.filters.http.health_check
+                    typed_config:
+                      "@type": type.googleapis.com/envoy.config.filter.http.health_check.v2.HealthCheck
+                      pass_through_mode: false
+                      headers:
+                        - exact_match: GET
+                          name: :method
                   - name: envoy.filters.http.grpc_web
                   - name: envoy.filters.http.cors
                   - name: envoy.filters.http.router
@@ -60,3 +67,15 @@ static_resources:
                     socket_address:
                       address: host.docker.internal
                       port_value: 50051
+#      common_lb_config:
+#        healthy_panic_threshold:
+#          value: 50.0
+#      health_checks:
+#        - timeout: 1s
+#          interval: 5s
+#          interval_jitter: 1s
+#          no_traffic_interval: 5s
+#          unhealthy_threshold: 1
+#          healthy_threshold: 3
+#          grpc_health_check:
+#            service_name: "health.HealthCheckService"
